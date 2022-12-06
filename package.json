@@ -4,8 +4,8 @@
   "homepage": "https://nicedoc.io/someone/test",
   "version": "0.0.0",
   "author": {
-    "email": "josefrancisco.verdu@gmail.com",
-    "name": "Someone!"
+    "name": "Someone!",
+    "email": "josefrancisco.verdu@gmail.com"
   },
   "repository": {
     "type": "git",
