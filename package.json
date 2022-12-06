@@ -9,10 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/someone/test.git"
+    "url": "git+https://github.com/Kikobeats/test.git"
   },
   "bugs": {
-    "url": "https://github.com/someone/test/issues"
+    "url": "https://github.com/Kikobeats/test/issues"
   },
   "keywords": [],
   "dependencies": {},
