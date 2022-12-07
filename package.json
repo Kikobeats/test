@@ -45,7 +45,7 @@
     "prerelease": "npm run update:check && npm run contributors",
     "pretest": "npm run lint",
     "release": "standard-version -a --releaseCommitMessageFormat=\"release: {{currentTag}}\"",
-    "release:github": "conventional-github-releaser -p angular",
+    "release:github": "conventional-github-releaser",
     "release:tags": "git push --follow-tags origin HEAD:master",
     "test": "exit 0",
     "update": "ncu -u",
