@@ -44,8 +44,8 @@
     "postrelease": "npm run release:tags && npm run release:github",
     "prerelease": "npm run update:check && npm run contributors",
     "pretest": "npm run lint",
-    "release": "standard-version -a --releaseCommitMessageFormat=\"release: {{currentTag}}\"",
-    "release:github": "conventional-github-releaser",
+    "release": "standard-version -a",
+    "release:github": "conventional-github-releaser -p angular",
     "release:tags": "git push --follow-tags origin HEAD:master",
     "test": "exit 0",
     "update": "ncu -u",
@@ -56,6 +56,9 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "exports": {
+    ".": "index.js"
   },
   "nano-staged": {
     "*.js,!*.min.js,": [
