@@ -7,6 +7,12 @@
     "name": "Someone!",
     "email": "josefrancisco.verdu@gmail.com"
   },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "foo"
+  ],
   "contributors": [
     {
       "name": "Kiko Beats",
@@ -20,7 +26,6 @@
   "bugs": {
     "url": "https://github.com/Kikobeats/test/issues"
   },
-  "keywords": [],
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "latest",
