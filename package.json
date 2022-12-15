@@ -3,6 +3,12 @@
   "description": "I'm a lazy",
   "homepage": "https://nicedoc.io/someone/test",
   "version": "0.0.10",
+  "contributors": [
+    {
+      "name": "Kiko Beats",
+      "email": "josefrancisco.verdu@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Kikobeats/test.git"
@@ -75,8 +81,5 @@
   "simple-git-hooks": {
     "commit-msg": "npx commitlint --edit",
     "pre-commit": "npx nano-staged"
-  },
-  "contributors": [
-    "Kiko Beats <josefrancisco.verdu@gmail.com>"
-  ]
+  }
 }
