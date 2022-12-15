@@ -8,8 +8,11 @@ on:
     branches:
       - master
 
+env:
+  MAIN_BRANCH: ${{ github.ref == 'refs/heads/master' }}
+
 jobs:
-  if: ${{ github.ref != 'refs/heads/master' }}
+  if: github.ref == 'refs/heads/master'
   test:
     runs-on: ubuntu-latest
     steps:

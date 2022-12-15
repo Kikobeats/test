@@ -5,9 +5,15 @@ on:
     branches:
       - master
 
+env:
+  MAIN_BRANCH: ${{ github.ref == 'refs/heads/master' }}
+  CONTRIBUTORS_COMMIT: "${{ startsWith(github.event.head_commit.message, 'build: contributors') }}"
+  DOCS_COMMIT: "${{ startsWith(github.event.head_commit.message, 'docs:') }}"
+  CI_COMMIT: "${{ startsWith(github.event.head_commit.message, 'ci:') }}"
+
 jobs:
   contributors:
-    if: "${{ !startsWith(github.event.head_commit.message, 'build: contributors') }}"
+    if: ${{ !CONTRIBUTORS_COMMIT }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,7 +37,7 @@ jobs:
           branch: ${{ github.head_ref }}
 
   release:
-    if: ${{ github.ref == 'refs/heads/master' && !startsWith(github.event.head_commit.message, 'chore(release):') && !startsWith(github.event.head_commit.message, 'docs:') }}
+    if: ${{ IS_MAIN_BRANCH && !DOCS_COMMIT && !CI_COMMIT }}
     needs: [contributors]
     runs-on: ubuntu-latest
     steps:
