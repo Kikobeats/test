@@ -1,19 +1,13 @@
-name: release
+name: main
 
 on:
   push:
     branches:
       - master
 
-env:
-  MAIN_BRANCH: ${{ github.ref == 'refs/heads/master' }}
-  CONTRIBUTORS_COMMIT: "${{ startsWith(github.event.head_commit.message, 'build: contributors') }}"
-  DOCS_COMMIT: "${{ startsWith(github.event.head_commit.message, 'docs:') }}"
-  CI_COMMIT: "${{ startsWith(github.event.head_commit.message, 'ci:') }}"
-
 jobs:
   contributors:
-    if: ${{ !CONTRIBUTORS_COMMIT }}
+    if: "${{ github.event.head_commit.message != 'build: contributors' }}"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,7 +31,7 @@ jobs:
           branch: ${{ github.head_ref }}
 
   release:
-    if: ${{ IS_MAIN_BRANCH && !DOCS_COMMIT && !CI_COMMIT }}
+    if: ${{ !startsWith(github.event.head_commit.message, 'chore(release):') && !startsWith(github.event.head_commit.message, 'docs:') && !startsWith(github.event.head_commit.message, 'ci:') }}
     needs: [contributors]
     runs-on: ubuntu-latest
     steps:
@@ -49,10 +43,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: lts/*
-      - name: Install
-        run: npm install --no-package-lock
-      - name: Test
-        run: npm test
       - name: Release
         shell: 'script -q -e -c "bash {0}" > /dev/null'
         env:
