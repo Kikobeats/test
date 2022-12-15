@@ -9,6 +9,7 @@ on:
       - master
 
 jobs:
+  if: ${{ github.ref != 'refs/heads/master' }}
   test:
     runs-on: ubuntu-latest
     steps:
