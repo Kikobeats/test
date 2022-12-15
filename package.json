@@ -4,15 +4,9 @@
   "homepage": "https://nicedoc.io/someone/test",
   "version": "0.0.10",
   "author": {
-    "name": "Someone!",
-    "email": "josefrancisco.verdu@gmail.com"
+    "email": "josefrancisco.verdu@gmail.com",
+    "name": "Someone!"
   },
-  "files": [
-    "index.js"
-  ],
-  "keywords": [
-    "foo"
-  ],
   "contributors": [
     {
       "name": "Kiko Beats",
@@ -26,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/Kikobeats/test/issues"
   },
+  "keywords": [
+    "foo"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@commitlint/cli": "latest",
@@ -47,6 +44,9 @@
   "engines": {
     "node": ">= 18"
   },
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "clean": "rm -rf node_modules",
     "contributors": "(npx git-authors-cli && npx finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
