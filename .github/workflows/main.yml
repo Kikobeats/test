@@ -57,13 +57,3 @@ jobs:
           git config --global user.name ${{ secrets.GIT_USERNAME }}
           git pull origin master
           npm run release
-  deploy:
-    needs: [contributors]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy
-        run: echo DEPLOYING
