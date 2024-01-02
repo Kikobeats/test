@@ -2,7 +2,7 @@
   "name": "test",
   "description": "I'm a lazy",
   "homepage": "https://nicedoc.io/someone/test",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "exports": {
     ".": "index.js"
   },
